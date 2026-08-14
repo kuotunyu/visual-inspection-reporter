@@ -112,7 +112,7 @@ hf download steven0226/uav-traffic-vision yolo26s_visdrone_640.onnx --local-dir 
 uv run python inspect_cli.py --input-dir sample_images --output output/ --html
 ```
 
-多產出一份 `report.html`，沿用 Gradio 介面的深色主題色票（見 DESIGN.md），方便直接寄送或用瀏覽器開啟而不需要 Markdown 檢視器。
+多產出一份 `report.html`，沿用 Gradio 介面同一份深色主題色票，方便直接寄送或用瀏覽器開啟而不需要 Markdown 檢視器。
 
 ## 快速開始
 
@@ -163,7 +163,6 @@ uv run pytest
 
 ```
 inspect_cli.py / app.py          # CLI 與 Gradio 進入點
-PRODUCT.md / DESIGN.md           # 產品原則與既有 Gradio 視覺系統
 scripts/                         # 合成 fixture 產生器、README 素材重現腳本
 src/inspector/
 ├── config.py                    # 跨領域共用定價表（含查證日期）、閾值、版本號

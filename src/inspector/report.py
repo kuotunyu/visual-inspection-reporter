@@ -159,7 +159,7 @@ def render_report(batch: BatchResult, output_dir: Path) -> Path:
 
 
 def render_html(batch: BatchResult, output_dir: Path) -> Path:
-    """把 report.md 轉成有樣式的 report.html（沿用 DESIGN.md 的深色主題 token）。"""
+    """把 report.md 轉成有樣式的 report.html（沿用 Gradio 介面同一份深色主題 token）。"""
     import markdown
 
     md_text = "\n".join(_report_lines(batch, output_dir))

@@ -5,6 +5,9 @@
 INTERVIEW_PREP.md
 CLAUDE.md
 .claude/
+plan.md
+PRODUCT.md
+DESIGN.md
 
 # large artifacts — published on Hugging Face Hub instead (see README)
 weights/

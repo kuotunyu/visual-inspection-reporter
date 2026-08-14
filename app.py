@@ -4,7 +4,6 @@
 
 Gradio 6 用法核對日期 2026-07-08：theme/css 已從 gr.Blocks() 建構子移到
 demo.launch()（https://www.gradio.app/main/guides/gradio-6-migration-guide）。
-產品原則見 PRODUCT.md；色彩、元件與對比數值見 DESIGN.md。
 """
 
 from __future__ import annotations
@@ -29,10 +28,10 @@ IMG_MD_LINE = re.compile(r"^!\[.*\]\(.*\)\n?", flags=re.MULTILINE)
 
 # ---------------------------------------------------------------------------
 # 主題：深夜產線監控站——深色主控螢幕，只有需要注意的地方（互動元件）亮起。
-# OKLCH 數值皆通過對比驗證（ink/bg ≥7:1、button 文字 ≥4.5:1），見 DESIGN.md。
+# OKLCH 數值皆通過對比驗證（ink/bg ≥7:1、button 文字 ≥4.5:1）。
 # 強調色（accent）與報告內部嚴重度色階（紅/橘/灰黃）刻意不同色系，兩者不混用。
 # _dark 變體刻意設為與亮值相同：無論檢視者系統是亮/暗色，畫面都固定深色，
-# 確保錄 demo GIF 時外觀一致，不受觀看端系統設定影響。
+# 不受觀看端系統設定影響。
 # ---------------------------------------------------------------------------
 _C = {
     "bg": "oklch(0.16 0.014 268)",
