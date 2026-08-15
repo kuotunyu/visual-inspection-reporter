@@ -1,7 +1,7 @@
 [project]
 name = "visual-inspection-reporter"
-version = "0.1.0"
-description = "PCB 產線巡檢報告產生器：本地 YOLO26 ONNX 偵測 + 商用 VLM API，輸出繁體中文巡檢報告"
+version = "0.1.1"
+description = "Evidence-grounded PCB/UAV inspection reporting: local YOLO26 ONNX detection + commercial VLM APIs with finding-id traceability."
 readme = "README.md"
 requires-python = ">=3.11"
 license = "AGPL-3.0-or-later"
@@ -20,6 +20,11 @@ dependencies = [
     "markdown>=3.10.2",
     "huggingface-hub>=0.24",  # README 的權重下載指令依賴 `hf` CLI；本來是 gradio 的間接依賴，明確列出避免未來版本升級悄悄斷掉
 ]
+
+[project.urls]
+Homepage = "https://github.com/kuotunyu/visual-inspection-reporter"
+Repository = "https://github.com/kuotunyu/visual-inspection-reporter"
+Release = "https://github.com/kuotunyu/visual-inspection-reporter/releases/tag/v0.1.1"
 
 [dependency-groups]
 dev = [
