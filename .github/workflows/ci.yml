@@ -11,7 +11,7 @@ jobs:
   quality:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: astral-sh/setup-uv@v6
         with:
           enable-cache: true
@@ -21,3 +21,26 @@ jobs:
         run: uv run ruff check .
       - name: Test
         run: uv run pytest
+
+  package:
+    name: Build and install wheel
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+          enable-cache: true
+      - name: Build distributions
+        run: uv build
+      - name: Install wheel into clean environment
+        shell: bash
+        run: |
+          set -euo pipefail
+          uv venv .release-venv --python 3.12
+          uv pip install --python .release-venv/bin/python dist/*.whl
+          .release-venv/bin/python - <<'PY'
+          import inspector
+          assert inspector.__version__ == "0.1.1"
+          print(inspector.__version__)
+          PY
